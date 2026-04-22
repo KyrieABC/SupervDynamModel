@@ -147,7 +147,7 @@ src/
 
 # 🔬 Key Insight
 
-Even if one-step loss is low ($\hat{s}_{t+1} \approx s_{t+1}$), multi-step rollout can diverge ($\hat{s}_{t+k} \neq s_{t+k}$).
+Even if one-step loss is low ($$\hat{s}_{t+1} \approx s_{t+1}$$), multi-step rollout can diverge ($$\hat{s}_{t+k} \neq s_{t+k}$$).
 
 ---
 
