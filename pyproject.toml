@@ -1,0 +1,40 @@
+# Standard configuration that tells python build tools exact how to package, install, and manage the dependencies
+
+# Tells python's installer what tools it needs to create teh distributable package (like .whl or .tar file)
+[build-system]
+# Build-time dependencies. 
+# setuptools (engine that finds your code and builds it)
+# wheel (format for final package)
+requires = ["setuptools>=68", "wheel"]
+# Specifies which part of setuptools actually perform the construction process
+build-backend = "setuptools.build_meta"
+
+# Contain the identity of your package
+# - when upload code to a repository like PyPI, this is what user will see
+[project]
+name = "SupervDynamModel"
+version = "0.1.0"
+description = "Supervised dynamics model for learning state-action transitions."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Huaiyu Ma" }
+]
+# Runtime dependencies
+# pip install . -> 
+dependencies = [
+  "numpy>=1.26",
+  "matplotlib>=3.8",
+  "scikit-learn>=1.4",
+  "torch>=2.2",
+  "tensorboard>=2.16",
+  "tqdm>=4.66"
+]
+
+# tells the builder that the root of source code is located inside src folder
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+# tells setuptools to scan the src folder for any folders containing an __init__.py fil and include them as sub-packages
+[tool.setuptools.packages.find]
+where = ["src"]
