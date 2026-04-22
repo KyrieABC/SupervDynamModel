@@ -141,6 +141,67 @@ src/
   utils/          helpers
 ```
 
+---
+
+# ▶️ How to Run
+
+Follow these steps to run the full pipeline:
+
+---
+
+## 1. Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd dynamics-model-repo
+```
+## 2. Create a virtual environment
+```macOS/Linux
+python -m venv .venv
+source .venv/bin/activate
+```
+```Windows
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+## 3. Install dependencies
+```
+pip install -r requirements.txt
+pip install -e .
+```
+## 4. Generate Synthetic dataset
+```
+python data/generate_dataset.py --config configs/default.json
+```
+## 5. Train the Model
+```
+python scripts/train.py --config configs/default.json
+```
+### Outputs:
+```
+artifacts/runs/default_run/
+├── checkpoints/
+│   ├── best.pt
+│   └── last.pt
+├── loss_curve.png
+├── scaler.pkl
+├── train_config_snapshot.json
+```
+## 6. Evaluate the Model
+```
+python scripts/evaluate.py --config configs/default.json
+```
+### Outputs:
+```
+artifacts/eval/default_run/
+├── metrics.json
+├── rollout_xy.png
+├── component_scatter.png
+├── state_component_timeseries.png
+```
+
+---
+
 # 📈 Example Results
 
 * **One-step prediction:** Low MSE → good immediate dynamics approximation.
