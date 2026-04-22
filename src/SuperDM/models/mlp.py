@@ -3,7 +3,7 @@ from __future__ import annotations
 import torch
 from torch import nn
 
-
+# Standard feed-forward Multi-Layer Perceptron (MLP) architecture 
 class MLPDynamicsModel(nn.Module):
     """MLP baseline for predicting next_state from (state, action)."""
 
@@ -18,6 +18,7 @@ class MLPDynamicsModel(nn.Module):
         super().__init__()
         self.state_dim = state_dim
         self.action_dim = action_dim
+        # (s,a) are inputs
         self.input_dim = state_dim + action_dim
         self.output_dim = state_dim
         self.predict_delta = predict_delta
@@ -33,10 +34,13 @@ class MLPDynamicsModel(nn.Module):
             prev_dim = hidden_dim
 
         layers.append(nn.Linear(prev_dim, self.output_dim))
+        # bundles these layers into a single container, which automatically handles the forward pass through the entire network
         self.network = nn.Sequential(*layers)
 
         self._initialize_weights()
 
+    # initializes weights to account for the variance reduction caused by ReLU
+    # preventing "vanishing" or "exploding" gradients early in training
     def _initialize_weights(self) -> None:
         for module in self.modules():
             if isinstance(module, nn.Linear):
