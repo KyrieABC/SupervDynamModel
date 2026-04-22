@@ -136,6 +136,7 @@ src/
   training/       training loop
   evaluation/     metrics + rollout
   utils/          helpers
+```
 
 # 📈 Example Results
 
