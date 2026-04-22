@@ -1,0 +1,6 @@
+numpy>=1.26
+matplotlib>=3.8
+scikit-learn>=1.4
+torch>=2.2
+tensorboard>=2.16
+tqdm>=4.66
