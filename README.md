@@ -2,9 +2,7 @@
 
 A clean, modular PyTorch project for learning environment transitions with supervised learning:
 
-\[
-(state, action) \rightarrow next\_state
-\]
+\[(state, action) \rightarrow next\_state\]
 
 This repository builds a simple but professional machine learning pipeline around a custom 2D point-mass simulator. It includes:
 
