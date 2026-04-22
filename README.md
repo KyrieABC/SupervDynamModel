@@ -111,7 +111,10 @@ Optimization: $\theta \leftarrow \theta - \eta \nabla_\theta \mathcal{L}$
 $$s_{t+1} \approx \hat{s}_{t+1}$$
 
 **Multi-step rollout:**
-$$\hat{s}_{t+k} = f_\theta(\hat{s}_{t+k-1}, a_{t+k-1})$$
+
+$$
+\hat{s}_{t+k} = f_\theta(\hat{s}_{t+k-1}, a_{t+k-1})
+$$
 
 ---
 
@@ -147,7 +150,17 @@ src/
 
 # 🔬 Key Insight
 
-Even if one-step loss is low ($$\hat{s}_{t+1} \approx s_{t+1}$$), multi-step rollout can diverge ($$\hat{s}_{t+k} \neq s_{t+k}$$).
+Even if one-step loss is low:
+
+$$
+\hat{s}_{t+1} \approx s_{t+1}
+$$
+
+multi-step rollout can diverge:
+
+$$
+\hat{s}_{t+k} \neq s_{t+k}
+$$
 
 ---
 
