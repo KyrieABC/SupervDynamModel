@@ -8,6 +8,9 @@ $$f_\theta(s_t, a_t) \rightarrow s_{t+1}$$
 
 # 🚀 Overview
 
+<p align="center">
+  <img src="asset/SupervDMPic.png" width="800"/>
+</p>
 This project learns a **forward dynamics model**, a core component in:
 
 * Model-Based Reinforcement Learning (MBRL)
