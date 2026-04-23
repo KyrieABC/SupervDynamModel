@@ -5,7 +5,7 @@ A modular, production-style PyTorch project for learning system dynamics:
 $$f_\theta(s_t, a_t) \rightarrow s_{t+1}$$
 
 ---
-
+! [Project Structure](https://chatgpt.com/s/m_69e99e11c3088191b91604a4ec2e3b84)
 # 🚀 Overview
 
 This project learns a **forward dynamics model**, a core component in:
